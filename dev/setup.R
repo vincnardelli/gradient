@@ -27,3 +27,5 @@ usethis::use_git_config(
   user.email = "vincnardelli@gmail.com"
 )
 usethis::use_git()
+
+usethis::use_travis()
