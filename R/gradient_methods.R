@@ -53,3 +53,34 @@ summary.gradient <- function(object, ...){
 coef.gradient <- function(object, ...){
   as.vector(object$b)
 }
+
+
+#' Title
+#'
+#' @param object object
+#' @param ... others
+#'
+#' @return
+#' @export
+plot.gradient <- function(object, ...){
+
+  dg <- as.data.frame(object$A)[1:object$i,]
+  dg$i <- 1:nrow(dg)
+  dg <- rbind(c(b, 0), dg)
+
+  dg <- dg %>%
+    pivot_longer(cols=-i, names_to = "variable", values_to = "value")
+
+  gg <- ggplot(dg, aes(x = i, y = value)) +
+    geom_line(aes(color = variable, linetype = variable))
+
+  gg
+}
+
+
+
+
+
+
+
+

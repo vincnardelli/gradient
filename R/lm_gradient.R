@@ -29,9 +29,9 @@
 #' @return results
 #' @export
 
-lm_gradient <- function(b,              # beta(0)
+lm_gradient <- function(b,                  # beta(0)
                             formula,        # y~x
-                            data=NULL,           # data.frame
+                            data=NULL,      # data.frame
                             maxit=1000,     # max iteration, not to run forever
                             tolerance=1e-5, # tolerance parameter
                             stepsize=1e-4,  # stepsize parameter

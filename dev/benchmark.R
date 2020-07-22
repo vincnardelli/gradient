@@ -9,8 +9,8 @@ x2 = rnorm(n)
 y = 1 + .5*x1 + .2*x2 + rnorm(n)
 x <- cbind(x1, x2)
 stepsize <- 1e-5
-tolerance <- 1e-5
-maxit <- 1e7
+tolerance <- 1e-10
+maxit <- 1e5
 b <- c(0.1, 0.1, 0.1)
 verbose <- TRUE
 data <-  data.frame(y=y, x1=x1, x2=x2)
@@ -93,25 +93,30 @@ linear_optim <- function(par,                    # beta(0)
 
     A[i, ] <- b
     i <- i + 1
-  }
+    }
   }
   return(list(b, A, i))
 }
 
 linear_optim(b, y~x1+x2, data,
                      tolerance = tolerance, maxit = maxit,
-                     stepsize = stepsize, fun="sd")
+                     stepsize = stepsize, fun="gd")
 
+lm_gradient(b, y~x1+x2, data, maxit = maxit, stepsize = stepsize,
+            tolerance = tolerance, fun="gd")
 
-bm <- bench::mark(gd_R = linear_optim(b, y~x1+x2, data,
+lm_gradient(b, y~x1+x2, data, maxit = maxit,
+            tolerance = tolerance, fun="sd")
+
+bm <- bench::mark(gd_R = linear_optim(b, y~x1+x2, data = data,
                                       tolerance = tolerance, maxit = maxit,
                                       stepsize = stepsize, fun="gd"),
-                  sd_R = linear_optim(b, y~x1+x2, data,
+                  sd_R = linear_optim(b, y~x1+x2, data = data,
                                       tolerance = tolerance, maxit = maxit, fun="sd"),
-                  gd_C = lm_gradient(b, y~x1+x2, data, maxit = maxit,
-                                     tolerance = tolerance, fun="gd"),
-                  sd_C = lm_gradient(b, y~x1+x2, data, maxit = maxit,
-                                     tolerance = tolerance, stepsize = stepsize, fun="sd"),
+                  gd_C = lm_gradient(b, y~x1+x2, data = data, maxit = maxit,
+                                     tolerance = tolerance, stepsize = stepsize, fun="gd"),
+                  sd_C = lm_gradient(b, y~x1+x2, data = data, maxit = maxit,
+                                     tolerance = tolerance, fun="sd"),
                   check=FALSE)
 print(bm)
 ggplot2::autoplot(bm)

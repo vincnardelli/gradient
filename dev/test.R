@@ -1,3 +1,4 @@
+
 library(gradient)
 
 n = 1000
@@ -6,7 +7,6 @@ x2 = rnorm(n)
 
 #input
 y = 1 + .5*x1 + .2*x2 + rnorm(n)
-x <- cbind(x1, x2)
 stepsize <- 1e-5
 tolerance <- 1e-10
 maxit <- 1e5
@@ -15,8 +15,10 @@ verbose <- TRUE
 data = data.frame(y=y, x1=x1, x2=x2)
 
 # new
-sd <- lm_gradient(b=b, formula=y~x1+x2, data=data, maxit=maxit, tolerance=tolerance, fun="sd")
-gd <- lm_gradient(b, formula=y~x1+x2, data=data,stepsize=stepsize, maxit=maxit, tolerance=tolerance, fun="gd")
+sd <- lm_gradient(b, y~x1+x2, data=data, maxit,
+                  tolerance, fun="sd")
+gd <- lm_gradient(b, y~x1+x2, data=data, maxit,
+                  tolerance, stepsize, fun="gd")
 
 print(sd)
 print(gd)
@@ -26,3 +28,11 @@ summary(gd)
 
 coef(sd)
 coef(gd)
+
+plot(sd)
+plot(gd)
+
+
+
+
+
