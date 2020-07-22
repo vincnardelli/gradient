@@ -9,21 +9,18 @@
 
 ## Overview
 
-ggplot2 is a system for declaratively creating graphics, based on [The
-Grammar of Graphics](https://amzn.to/2ef1eWp). You provide the data,
-tell ggplot2 how to map variables to aesthetics, what graphical
-primitives to use, and it takes care of the details.
+**gradient** is a small package for efficient descent computation. Using gradient it is possible to perform steepest descent or gradient descent to fit linear models. Moreover the package contains a serie of function for inspecting the convergence of the algorithm. Find out more in the vingnette.
 
 ## Installation
 
 ``` r
-# The easiest way to get ggplot2 is to install the whole tidyverse:
-install.packages("tidyverse")
-
-# Alternatively, install just ggplot2:
-install.packages("ggplot2")
-
-# Or the development version from GitHub:
+# The easiest way to get descent is to install it from GitHub:
 # install.packages("devtools")
-devtools::install_github("tidyverse/ggplot2")
+devtools::install_github("vincnardelli/gradient")
 ```
+
+
+### Authors and mantainers
+Alice Giampino - a.giampino@campus.unimib.it
+
+Vincenzo Nardelli - v.nardelli2@campus.unimib.it

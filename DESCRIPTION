@@ -1,6 +1,6 @@
 Package: gradient
-Title: DescR
-Version: 0.0.0.9000
+Title: Gradient
+Version: 0.1
 Authors@R: 
     c(person(given = "Alice",
              family = "Giampino",
@@ -10,9 +10,9 @@ Authors@R:
              family = "Nardelli",
              role = "aut",
              email = "v.nardelli2@campus.unimib.it"))
-Description: A small package for efficient descent computation!
+Description: A small package for efficient descent computation
 License: LGPL (>= 2.1)
-URL: https://github.com/vanlog/shapes
+URL: https://github.com/vincnardelli/gradient
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
