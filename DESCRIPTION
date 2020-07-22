@@ -22,7 +22,9 @@ Suggests:
     covr
 Imports: 
     Rcpp,
-    RcppArmadillo
+    RcppArmadillo,
+    foreach,
+    doParallel
 LinkingTo: 
     Rcpp,
     RcppArmadillo

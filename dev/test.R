@@ -1,6 +1,6 @@
 library(gradient)
 
-n = 1000
+n = 10000
 x1 = rnorm(n)
 x2 = rnorm(n)
 
@@ -26,3 +26,14 @@ summary(b)
 
 coef(a)
 coef(b)
+
+
+c <- lm_gradient_cv(10, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = TRUE)
+c
+
+
+bench::mark(
+  parallel=lm_gradient_cv(2500, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = TRUE),
+  sequential = lm_gradient_cv(2500, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = FALSE),
+  check = FALSE
+)
