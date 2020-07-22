@@ -34,3 +34,6 @@ usethis::use_git()
 
 usethis::use_travis()
 usethis::use_coverage()
+
+
+usethis::use_vignette(name="linear_model_with_gradient_package")

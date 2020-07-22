@@ -2,18 +2,20 @@
 % Please edit documentation in R/gradient_methods.R
 \name{print.gradient}
 \alias{print.gradient}
-\title{Title}
+\title{Print
+prints its argument}
 \usage{
 \method{print}{gradient}(x, ...)
 }
 \arguments{
-\item{x}{object}
+\item{x}{object of descent class}
 
-\item{...}{othjers}
+\item{...}{further arguments passed to or from other methods}
 }
 \value{
-a
+object of class descent
 }
 \description{
-Title
+Print
+prints its argument
 }

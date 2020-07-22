@@ -2,20 +2,23 @@
 % Please edit documentation in R/gradient_methods.R
 \name{predict.gradient}
 \alias{predict.gradient}
-\title{Title}
+\title{Predict}
 \usage{
 \method{predict}{gradient}(object, newdata, ...)
 }
 \arguments{
-\item{object}{object}
+\item{object}{object of descent class}
 
 \item{newdata}{new data}
+\item{newdata}{An optional data frame in which to look for variables with which to predict. If omitted, the fitted values are used.}
 
-\item{...}{others}
+
+\item{...}{further arguments passed to or from other methods.}
 }
 \value{
 a
+vector of predictions or a matrix of predictions
 }
 \description{
-Title
+Predict
 }

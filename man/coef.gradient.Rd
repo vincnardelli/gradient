@@ -2,18 +2,18 @@
 % Please edit documentation in R/gradient_methods.R
 \name{coef.gradient}
 \alias{coef.gradient}
-\title{Title}
+\title{Extract Model Coefficients}
 \usage{
 \method{coef}{gradient}(object, ...)
 }
 \arguments{
 \item{object}{object}
 
-\item{...}{others}
+\item{...}{further arguments passed to or from other methods}
 }
 \value{
-a
+list with coefficients
 }
 \description{
-Title
+generic function which extracts model coefficients from objects returned by modeling functions
 }

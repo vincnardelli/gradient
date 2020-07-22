@@ -2,18 +2,18 @@
 % Please edit documentation in R/gradient_methods.R
 \name{summary.gradient}
 \alias{summary.gradient}
-\title{Title}
+\title{Summary}
 \usage{
 \method{summary}{gradient}(object, ...)
 }
 \arguments{
-\item{object}{oggetto}
+\item{object}{object of descent class}
 
-\item{...}{others}
+\item{...}{further arguments passed to or from other methods}
 }
 \value{
-a
+object of class descent
 }
 \description{
-Title
+Summarize an analysis of the fitted model
 }

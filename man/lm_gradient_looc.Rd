@@ -2,7 +2,7 @@
 % Please edit documentation in R/lm_gradient_looc.R
 \name{lm_gradient_looc}
 \alias{lm_gradient_looc}
-\title{Title}
+\title{Leave one out cross validation for Linear Models with gradient}
 \usage{
 lm_gradient_looc(
   b,
@@ -16,25 +16,25 @@ lm_gradient_looc(
 )
 }
 \arguments{
-\item{b}{b}
+\item{b}{initial values for beta}
 
-\item{formula}{formula}
+\item{formula}{an object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted}
 
-\item{data}{data}
+\item{data}{an optional data frame, list or environment. If not found in data, the variables are taken from environment(formula)}
 
-\item{maxit}{maxit}
+\item{maxit}{number of max iterations of the algorithm}
 
-\item{tolerance}{tol}
+\item{tolerance}{the algorithm will stop if tolerance is reached}
 
-\item{stepsize}{a}
+\item{stepsize}{size of each step (only for gradient descent)}
 
-\item{fun}{a}
+\item{fun}{function can be \code{sd} for steepest descent or \code{gd} for gradient descent}
 
-\item{parallel}{a}
+\item{parallel}{perform the cross validation in multi-core}
 }
 \value{
-a
+the function returns an object of class \code{"gradient"}
 }
 \description{
-Title
+\code{lm_gradient_looc} is used to perform a leave one out cross validation to a linear model with gradient or steepest descent.
 }
