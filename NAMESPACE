@@ -1,0 +1,8 @@
+useDynLib(gradient, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+importFrom("stats", "model.frame.default", "model.response", "pt",
+               "var")
+exportPattern("^[[:alpha:]]+")
+S3method(print,gradient)
+S3method(summary,gradient)
+S3method(coef,gradient)

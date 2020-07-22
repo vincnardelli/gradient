@@ -1,0 +1,27 @@
+Package: gradient
+Title: DescR
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Alice",
+             family = "Giampino",
+             role = c("cre", "aut"),
+             email = "a.giampino@campus.unimib.it"),
+      person(given = "Vincenzo",
+             family = "Nardelli",
+             role = "aut",
+             email = "v.nardelli2@campus.unimib.it"))
+Description: A small package for efficient descent computation!
+License: LGPL (>= 2.1)
+URL: https://github.com/vanlog/shapes
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat
+Imports: 
+    Rcpp,
+    RcppArmadillo
+LinkingTo: 
+    Rcpp,
+    RcppArmadillo

@@ -1,0 +1,5 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^gradient\.Rproj$
+^dev$
+^LICENSE\.md$
