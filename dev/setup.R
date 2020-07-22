@@ -29,3 +29,4 @@ usethis::use_git_config(
 usethis::use_git()
 
 usethis::use_travis()
+usethis::use_coverage()

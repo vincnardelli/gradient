@@ -4,6 +4,7 @@
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/vincnardelli/gradient.svg?branch=master)](https://travis-ci.com/vincnardelli/gradient)
+[![Codecov test coverage](https://codecov.io/gh/vincnardelli/gradient/branch/master/graph/badge.svg)](https://codecov.io/gh/vincnardelli/gradient?branch=master)
 <!-- badges: end -->
 
 ## Overview
