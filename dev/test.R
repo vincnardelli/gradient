@@ -33,9 +33,6 @@ plot(sd)
 plot(gd)
 
 
-coef(a)
-coef(b)
-
 
 c <- lm_gradient_cv(10, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = TRUE)
 c

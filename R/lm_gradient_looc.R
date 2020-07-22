@@ -1,3 +1,17 @@
+#' Title
+#'
+#' @param b b
+#' @param formula formula
+#' @param data data
+#' @param maxit maxit
+#' @param tolerance tol
+#' @param stepsize a
+#' @param fun a
+#' @param parallel a
+#'
+#' @return a
+#' @export
+
 lm_gradient_looc <- function(b, formula, data=NULL, maxit=1000,     # max iteration, not to run forever
                              tolerance=1e-5, # tolerance parameter
                              stepsize=1e-4,  # stepsize parameter

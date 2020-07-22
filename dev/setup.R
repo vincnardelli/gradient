@@ -3,6 +3,8 @@ usethis::use_build_ignore("dev")
 usethis::use_rcpp_armadillo()
 usethis::use_package("foreach")
 usethis::use_package("doParallel")
+usethis::use_package("ggplot2")
+usethis::use_package("tidyr")
 
 usethis::use_description(
   list(

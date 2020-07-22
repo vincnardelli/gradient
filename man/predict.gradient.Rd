@@ -9,10 +9,12 @@
 \arguments{
 \item{object}{object}
 
+\item{newdata}{new data}
+
 \item{...}{others}
 }
 \value{
-
+a
 }
 \description{
 Title

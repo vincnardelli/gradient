@@ -8,6 +8,7 @@
 #' @param maxit max ite
 #' @param tolerance tol
 #' @param stepsize step size
+#' @param parallel parallel
 #'
 #' @return something
 #' @export

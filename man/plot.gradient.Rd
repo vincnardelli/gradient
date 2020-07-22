@@ -4,15 +4,15 @@
 \alias{plot.gradient}
 \title{Title}
 \usage{
-\method{plot}{gradient}(object, ...)
+\method{plot}{gradient}(x, ...)
 }
 \arguments{
-\item{object}{object}
+\item{x}{obj}
 
 \item{...}{others}
 }
 \value{
-
+a
 }
 \description{
 Title
