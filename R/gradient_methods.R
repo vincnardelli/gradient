@@ -78,6 +78,28 @@ plot.gradient <- function(object, ...){
 }
 
 
+#' Title
+#'
+#' @param object object
+#' @param ... others
+#'
+#' @return
+#' @export
+predict.gradient <- function(object, newdata, ...){
+
+  formula <- object$call
+  coeff <- object$b
+  mm <- model.matrix(formula)
+  tt <- terms(formula)
+  aa <- attr(mm, "assign")
+  ll <- attr(tt, "term.labels")
+  mat <- match(ll, names(new))
+
+  y_pred <- apply(coeff*new[, mat], 1, sum)
+
+  return(as.data.frame(y_pred))
+}
+
 
 
 
