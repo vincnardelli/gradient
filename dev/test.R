@@ -29,9 +29,30 @@ summary(gd)
 coef(sd)
 coef(gd)
 
+# Convergence plot
+
 plot(sd)
 plot(gd)
 
+
+# Predict
+
+n1 <- 200
+x11 <- rnorm(200)
+x21 <- rnorm(200)
+x31 <- rnorm(200)
+
+new <- data.frame(x1=x11, x2=x21, x3=x31)
+
+y1 = 1 + .5*x1 + .2*x2 + rnorm(n1)
+
+y_pred <- predict(sd, new)
+predict(gd, new)
+
+
+# Validate
+
+validate(sd, new, y1)
 
 
 c <- lm_gradient_cv(10, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = TRUE)
