@@ -11,8 +11,7 @@ lm_gradient(
   maxit = 1000,
   tolerance = 1e-05,
   stepsize = 1e-04,
-  fun = "sd",
-  verbose = T
+  fun = "sd"
 )
 }
 \arguments{
@@ -29,8 +28,6 @@ lm_gradient(
 \item{stepsize}{size of each step (only for gradient descent)}
 
 \item{fun}{function can be \code{sd} for steepest descent or \code{gd} for gradient descent}
-
-\item{verbose}{verbose}
 }
 \value{
 the function returns an object of class \code{"gradient"}

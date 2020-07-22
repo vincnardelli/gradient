@@ -26,7 +26,6 @@
 #' @param tolerance the algorithm will stop if tolerance is reached
 #' @param stepsize size of each step (only for gradient descent)
 #' @param fun function can be \code{sd} for steepest descent or \code{gd} for gradient descent
-#' @param verbose verbose
 #'
 #' @return the function returns an object of class \code{"gradient"}
 #' @export
@@ -37,9 +36,8 @@ lm_gradient <- function(b,                  # beta(0)
                             maxit=1000,     # max iteration, not to run forever
                             tolerance=1e-5, # tolerance parameter
                             stepsize=1e-4,  # stepsize parameter
-                            fun = "sd",     # method to use
-                            verbose=T       # should the function write messages during
-) {
+                            fun = "sd"    # method to use
+                        ) {
 
   # controls:
   .controls(tolerance, maxit, stepsize)

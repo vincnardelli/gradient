@@ -2,25 +2,11 @@
 % Please edit documentation in R/gradient_cv_methods.R
 \name{plot.gradient_cv}
 \alias{plot.gradient_cv}
-
-\title{Title}
-
 \title{Plot gradient CV}
-
 \usage{
 \method{plot}{gradient_cv}(x, ...)
 }
 \arguments{
-
-\item{x}{object}
-
-\item{...}{others}
-}
-\value{
-a
-}
-\description{
-
 \item{x}{object of gradient_cv class}
 
 \item{...}{further arguments passed to or from other methods}

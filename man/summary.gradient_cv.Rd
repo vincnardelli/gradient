@@ -2,21 +2,6 @@
 % Please edit documentation in R/gradient_cv_methods.R
 \name{summary.gradient_cv}
 \alias{summary.gradient_cv}
-\title{Title}
-\usage{
-\method{summary}{gradient_cv}(x, ...)
-}
-\arguments{
-\item{x}{object}
-
-\item{...}{others}
-}
-\value{
-a
-}
-\description{
-Title
-
 \title{Summary}
 \usage{
 \method{summary}{gradient_cv}(object, ...)
