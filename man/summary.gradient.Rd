@@ -7,12 +7,12 @@
 \method{summary}{gradient}(object, ...)
 }
 \arguments{
-\item{object}{object of descent class}
+\item{object}{object of gradient class}
 
 \item{...}{further arguments passed to or from other methods}
 }
 \value{
-object of class descent
+object of class gradient
 }
 \description{
 Summarize an analysis of the fitted model

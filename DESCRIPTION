@@ -10,7 +10,7 @@ Authors@R:
              family = "Nardelli",
              role = "aut",
              email = "v.nardelli2@campus.unimib.it"))
-Description: A small package for efficient descent computation
+Description: gradient is a small package for efficient descent computation. Using gradient it is possible to perform steepest descent or gradient descent to fit linear models. Moreover the package contains a serie of function for inspecting the convergence of the algorithm.
 License: LGPL (>= 2.1)
 URL: https://github.com/vincnardelli/gradient
 Encoding: UTF-8
@@ -28,7 +28,8 @@ Imports:
     foreach,
     doParallel,
     ggplot2,
-    tidyr
+    tidyr,
+    gridExtra
 LinkingTo: 
     Rcpp,
     RcppArmadillo

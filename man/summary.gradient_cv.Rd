@@ -16,4 +16,19 @@ a
 }
 \description{
 Title
+
+\title{Summary}
+\usage{
+\method{summary}{gradient_cv}(object, ...)
+}
+\arguments{
+\item{object}{object of gradient_cv class}
+
+\item{...}{further arguments passed to or from other methods}
+}
+\value{
+object of class gradient_cv
+}
+\description{
+Summarize an analysis of the fitted model
 }

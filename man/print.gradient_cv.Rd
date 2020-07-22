@@ -2,11 +2,17 @@
 % Please edit documentation in R/gradient_cv_methods.R
 \name{print.gradient_cv}
 \alias{print.gradient_cv}
+
 \title{Title}
+=======
+\title{Print
+prints its argument}
+
 \usage{
 \method{print}{gradient_cv}(x, ...)
 }
 \arguments{
+
 \item{x}{object}
 
 \item{...}{othjers}
@@ -15,5 +21,16 @@
 a
 }
 \description{
-Title
+
+\item{x}{object of gradient_cv class}
+
+\item{...}{further arguments passed to or from other methods}
+}
+\value{
+object of class gradient_cv
+}
+\description{
+Print
+prints its argument
+
 }

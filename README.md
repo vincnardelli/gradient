@@ -14,9 +14,9 @@
 ## Installation
 
 ``` r
-# The easiest way to get descent is to install it from GitHub:
+# The easiest way to get gradient is to install it from GitHub:
 # install.packages("devtools")
-devtools::install_github("vincnardelli/gradient")
+devtools::install_github("vincnardelli/gradient")w
 ```
 
 

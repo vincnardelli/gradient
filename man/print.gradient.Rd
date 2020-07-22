@@ -8,12 +8,12 @@ prints its argument}
 \method{print}{gradient}(x, ...)
 }
 \arguments{
-\item{x}{object of descent class}
+\item{x}{object of gradient class}
 
 \item{...}{further arguments passed to or from other methods}
 }
 \value{
-object of class descent
+object of class gradient
 }
 \description{
 Print
