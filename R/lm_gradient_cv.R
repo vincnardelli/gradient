@@ -1,19 +1,19 @@
-#' Linear model gradient cross validation
+#' Cross validation for Linear Models with gradient
 #'
-#' @param n.folds nfold
-#' @param formula formula
-#' @param data data
-#' @param fun fun
-#' @param b b
-#' @param maxit max ite
-#' @param tolerance tol
-#' @param stepsize step size
-#' @param parallel parallel
+#' \code{lm_gradient_cv} is used to perform a k-fold cross validation to a linear model with gradient or steepest descent.
 #'
-#' @return something
+#' @param b initial values for beta
+#' @param formula an object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted
+#' @param data an optional data frame, list or environment. If not found in data, the variables are taken from environment(formula)
+#' @param maxit number of max iterations of the algorithm
+#' @param tolerance the algorithm will stop if tolerance is reached
+#' @param stepsize size of each step (only for gradient descent)
+#' @param n.folds number of folds (k)
+#' @param parallel perform the cross validation in multi-core
+#' @param fun function can be \code{sd} for steepest descent or \code{gd} for gradient descent
+#'
+#' @return the function returns an object of class \code{"gradient"}
 #' @export
-#'
-
 lm_gradient_cv <- function(n.folds, b, formula, data=NULL, maxit=1000,     # max iteration, not to run forever
                            tolerance=1e-5, # tolerance parameter
                            stepsize=1e-4,  # stepsize parameter

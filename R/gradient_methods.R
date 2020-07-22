@@ -1,10 +1,9 @@
-#' Title
+#' Print
+#' prints its argument
+#' @param x  object of descent class
+#' @param ... further arguments passed to or from other methods
 #'
-#' @param x object
-#' @param ... othjers
-#'
-#' @return a
-#' @export
+#' @return object of class descent
 
 print.gradient <- function(x, ...) {
   for (i in 0:(length(x$b)-1)){
@@ -13,12 +12,13 @@ print.gradient <- function(x, ...) {
   cat("\n")
 }
 
-#' Title
+#' Summary
 #'
-#' @param object oggetto
-#' @param ... others
+#' Summarize an analysis of the fitted model
+#' @param object  object of descent class
+#' @param ... further arguments passed to or from other methods
 #'
-#' @return a
+#' @return object of class descent
 #' @export
 
 summary.gradient <- function(object, ...){
@@ -43,24 +43,25 @@ summary.gradient <- function(object, ...){
 }
 
 
-#' Title
+#' Extract Model Coefficients
 #'
+#' generic function which extracts model coefficients from objects returned by modeling functions
 #' @param object object
-#' @param ... others
+#' @param ... further arguments passed to or from other methods
 #'
-#' @return a
+#' @return list with coefficients
 #' @export
 coef.gradient <- function(object, ...){
   as.vector(object$b)
 }
 
 
-#' Title
+#' Plot descent convergence
 #'
-#' @param ... others
-#' @param x obj
+#' @param ... further arguments passed to or from other methods
+#' @param x object of descent class
 #'
-#' @return a
+#' @return graphics in ggplot
 #' @export
 plot.gradient <- function(x, ...){
 
@@ -79,13 +80,13 @@ plot.gradient <- function(x, ...){
 }
 
 
-#' Title
+#' Predict
 #'
-#' @param object object
-#' @param ... others
-#' @param newdata new data
+#' @param object  object of descent class
+#' @param ... further arguments passed to or from other methods.
+#' @param newdata An optional data frame in which to look for variables with which to predict. If omitted, the fitted values are used.
 #'
-#' @return a
+#' @return  vector of predictions or a matrix of predictions
 #' @export
 predict.gradient <- function(object, newdata, ...){
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/lm_gradient_cv.R
 \name{lm_gradient_cv}
 \alias{lm_gradient_cv}
-\title{Linear model gradient cross validation}
+\title{Cross validation for Linear Models with gradient}
 \usage{
 lm_gradient_cv(
   n.folds,
@@ -17,27 +17,27 @@ lm_gradient_cv(
 )
 }
 \arguments{
-\item{n.folds}{nfold}
+\item{n.folds}{number of folds (k)}
 
-\item{b}{b}
+\item{b}{initial values for beta}
 
-\item{formula}{formula}
+\item{formula}{an object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted}
 
-\item{data}{data}
+\item{data}{an optional data frame, list or environment. If not found in data, the variables are taken from environment(formula)}
 
-\item{maxit}{max ite}
+\item{maxit}{number of max iterations of the algorithm}
 
-\item{tolerance}{tol}
+\item{tolerance}{the algorithm will stop if tolerance is reached}
 
-\item{stepsize}{step size}
+\item{stepsize}{size of each step (only for gradient descent)}
 
-\item{fun}{fun}
+\item{fun}{function can be \code{sd} for steepest descent or \code{gd} for gradient descent}
 
-\item{parallel}{parallel}
+\item{parallel}{perform the cross validation in multi-core}
 }
 \value{
-something
+the function returns an object of class \code{"gradient"}
 }
 \description{
-Linear model gradient cross validation
+\code{lm_gradient_cv} is used to perform a k-fold cross validation to a linear model with gradient or steepest descent.
 }
