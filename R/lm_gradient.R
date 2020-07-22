@@ -54,7 +54,7 @@ lm_gradient <- function(b,              # beta(0)
     y <- data[,match(response, names(data))]
     vars <- all.vars(formula)[which(all.vars(formula)!= response)]
     mt <- match(vars, names(data))
-    x <- model.matrix(~., df[mt])
+    x <- model.matrix(~., data[mt])
 
 
   }

@@ -15,13 +15,8 @@ verbose <- TRUE
 data = data.frame(y=y, x1=x1, x2=x2)
 
 # new
-a <- lm_gradient(b=b, formula=y~x1+x2, data=data, stepsize, maxit, tolerance, fun="sd")
-b <- lm_gradient(b, y~x1+x2, data, maxit, tolerance, fun="gd")
-
-# old
-a <- gd(b, y~x1+x2, stepsize, maxit, tolerance)
-b <- sd(b, y~x1+x2, maxit, tolerance)
-
+a <- lm_gradient(b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd")
+b <- lm_gradient(b, y~x1+x2, data, maxit, tolerance, stepsize, fun="gd")
 
 print(a)
 print(b)
