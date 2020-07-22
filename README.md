@@ -1,26 +1,28 @@
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# gradient
+# gradient <img src="dev/img/hexlogo.png" align="right" width="120" />
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/vincnardelli/gradient.svg?branch=master)](https://travis-ci.com/vincnardelli/gradient)
 <!-- badges: end -->
 
-The goal of gradient is to ...
+## Overview
+
+ggplot2 is a system for declaratively creating graphics, based on [The
+Grammar of Graphics](https://amzn.to/2ef1eWp). You provide the data,
+tell ggplot2 how to map variables to aesthetics, what graphical
+primitives to use, and it takes care of the details.
 
 ## Installation
 
-You can install the released version of gradient from [CRAN](https://CRAN.R-project.org) with:
-
 ``` r
-install.packages("gradient")
+# The easiest way to get ggplot2 is to install the whole tidyverse:
+install.packages("tidyverse")
+
+# Alternatively, install just ggplot2:
+install.packages("ggplot2")
+
+# Or the development version from GitHub:
+# install.packages("devtools")
+devtools::install_github("tidyverse/ggplot2")
 ```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(gradient)
-## basic example code
-```
-
