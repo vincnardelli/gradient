@@ -65,6 +65,8 @@ lm_gradient <- function(b,              # beta(0)
     out <- .Call(`_gradient_sd`, x, y, b, maxit, tolerance)
 
   }
+  out$call <- formula
+  out$fun <- fun
   class(out) <- "gradient"
 
   return(out)
