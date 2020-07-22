@@ -1,6 +1,8 @@
 # setup
 usethis::use_build_ignore("dev")
 usethis::use_rcpp_armadillo()
+usethis::use_package("foreach")
+usethis::use_package("doParallel")
 
 usethis::use_description(
   list(

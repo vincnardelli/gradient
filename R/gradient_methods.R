@@ -93,7 +93,7 @@ predict.gradient <- function(object, newdata, ...){
   tt <- terms(formula)
   aa <- attr(mm, "assign")
   ll <- attr(tt, "term.labels")
-  mat <- match(ll, names(new))
+  mat <- match(ll, names(newdata))
 
   y_pred <- apply(coeff*newdata[, mat], 1, sum)
 

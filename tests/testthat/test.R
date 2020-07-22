@@ -26,19 +26,51 @@ test_that("gd tolerance reached", {
 
 context("Steepest Descent")
 
-test_that("st", {
+test_that("sd", {
   expect_equal(lm_gradient(b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd")$b,
                structure(c(0.528624332625307, 0.291198937062253, 0.196457629276134
                ), .Dim = c(3L, 1L)))
 })
 
-test_that("st tolerance reached", {
+test_that("sd tolerance reached", {
   expect_warning(lm_gradient(b=b, formula=y~x1+x2, data=data, maxit=1000, tolerance, fun="sd"),
                  "Tolerance reached", fixed=TRUE)
 })
 
-# check error < x
-# check tolerance
+
+
+context("Cross validation")
+test_that("gd cv sequential", {
+  expect_equal(lm_gradient_cv(5, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="gd", parallel = FALSE)$b,
+               c(beta0 = 0.242493623004362, beta1 = 0.163562955210011, beta2 = 0.132066768066533
+               ))
+})
+
+test_that("gd cv sequential without data", {
+  expect_equal(lm_gradient_cv(5, b=b, formula=y~x1+x2, maxit=maxit, tolerance=tolerance, fun="gd", parallel = FALSE)$b,
+               c(beta0 = 0.242493623004362, beta1 = 0.163562955210011, beta2 = 0.132066768066533
+               ))
+})
+
+test_that("sd cv sequential", {
+  set.seed(123)
+  expect <- lm_gradient_cv(5, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = FALSE)$b
+  expect_equal(expect,
+               c(beta0 = 0.528313287442981, beta1 = 0.291059616808143, beta2 = 0.196367399429546
+               ))
+})
+
+test_that("sd cv parallel", {
+  set.seed(123)
+  expect <- lm_gradient_cv(5, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = TRUE)$b
+  expect_equal(expect,
+               c(beta0 = 0.528313287442981, beta1 = 0.291059616808143, beta2 = 0.196367399429546
+               ))
+})
+
+
+
+
 
 context("Inputs Checks")
 
