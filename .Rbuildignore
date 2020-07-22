@@ -3,3 +3,4 @@
 ^gradient\.Rproj$
 ^dev$
 ^LICENSE\.md$
+^\.travis\.yml$

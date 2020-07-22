@@ -2,6 +2,7 @@
 # gradient
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.com/vincnardelli/gradient.svg?branch=master)](https://travis-ci.com/vincnardelli/gradient)
 <!-- badges: end -->
 
 The goal of gradient is to ...
