@@ -9,7 +9,7 @@
 
 ## Overview
 
-**gradient** is a small package for efficient descent computation. Using gradient it is possible to perform steepest descent or gradient descent to fit linear models. Moreover the package contains a serie of function for inspecting the convergence of the algorithm. Find out more in the vingnette.
+**gradient** is a small package for efficient descent computation. Using _gradient_ it is possible to perform steepest descent or gradient descent to fit linear models. Moreover the package contains a series of function for inspecting the convergence of the algorithm. Find out more in the vingnette.
 
 ## Installation
 
