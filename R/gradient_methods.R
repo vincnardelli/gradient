@@ -1,10 +1,9 @@
 #' Print
 #' prints its argument
-#' @param x  object of descent class
+#' @param x  object of gradient class
 #' @param ... further arguments passed to or from other methods
 #'
-#' @return object of class descent
-
+#' @return object of class gradient
 print.gradient <- function(x, ...) {
   for (i in 0:(length(x$b)-1)){
     cat(paste0(expression(beta), i), round(x$b[i+1], 5), ' ')
@@ -15,12 +14,11 @@ print.gradient <- function(x, ...) {
 #' Summary
 #'
 #' Summarize an analysis of the fitted model
-#' @param object  object of descent class
+#' @param object  object of gradient class
 #' @param ... further arguments passed to or from other methods
 #'
-#' @return object of class descent
+#' @return object of class gradient
 #' @export
-
 summary.gradient <- function(object, ...){
 
   tabella <- data.frame(coeff = rep(NA, length(object$b)),
@@ -56,10 +54,10 @@ coef.gradient <- function(object, ...){
 }
 
 
-#' Plot descent convergence
+#' Plot gradient convergence
 #'
 #' @param ... further arguments passed to or from other methods
-#' @param x object of descent class
+#' @param x object of gradient class
 #'
 #' @return graphics in ggplot
 #' @export
@@ -82,7 +80,7 @@ plot.gradient <- function(x, ...){
 
 #' Predict
 #'
-#' @param object  object of descent class
+#' @param object  object of gradient class
 #' @param ... further arguments passed to or from other methods.
 #' @param newdata An optional data frame in which to look for variables with which to predict. If omitted, the fitted values are used.
 #'
@@ -102,38 +100,3 @@ predict.gradient <- function(object, newdata, ...){
 
   return(as.data.frame(y_pred))
 }
-
-
-
-#' Title
-#'
-#' @param object object
-#' @param ... others
-#'
-#' @return
-#' @export
-validate.gradient <- function(object, newdata, y, method="all", ...){
-
-  y_pred <- predict(object, newdata)[,1]
-
-  if(method == "RMSE"){
-    error <- data.frame(RMSE=sqrt(mean((y - y_pred)^2)))
-  }
-  if(method == "MAE"){
-    error <- data.frame(MAE=sqrt(mean((y - y_pred)^2)))
-  }
-  if(method == "MedianAE"){
-    error <- data.frame(MedianAE=sqrt(mean((y - y_pred)^2)))
-  }
-  if(method == "all"){
-    error <- data.frame(RMSE=sqrt(mean((y - y_pred)^2)), MAE=mean(abs(y - y_pred)),
-                        MedianAE = median(abs(y - y_pred)))
-
-  }
-  return(error)
-
-}
-
-
-
-

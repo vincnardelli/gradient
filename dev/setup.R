@@ -5,6 +5,7 @@ usethis::use_package("foreach")
 usethis::use_package("doParallel")
 usethis::use_package("ggplot2")
 usethis::use_package("tidyr")
+usethis::use_package("gridExtra")
 
 usethis::use_description(
   list(

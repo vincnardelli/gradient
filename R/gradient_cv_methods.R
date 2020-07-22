@@ -1,10 +1,9 @@
-#' Title
+#' Print
+#' prints its argument
+#' @param x  object of gradient_cv class
+#' @param ... further arguments passed to or from other methods
 #'
-#' @param x object
-#' @param ... othjers
-#'
-#' @return a
-#' @export
+#' @return object of class gradient_cv
 print.gradient_cv <- function(x, ...) {
   cat('\n')
   cat(paste0(nrow(x$validation),"-fold cross validation", ""), "\n")
@@ -15,26 +14,26 @@ print.gradient_cv <- function(x, ...) {
   cat("\n")
 }
 
-#' Title
+#' Summary
 #'
-#' @param x object
-#' @param ... othjers
+#' Summarize an analysis of the fitted model
+#' @param object  object of gradient_cv class
+#' @param ... further arguments passed to or from other methods
 #'
-#' @return a
+#' @return object of class gradient_cv
 #' @export
-summary.gradient_cv <- function(x, ...){
+summary.gradient_cv <- function(object, ...){
   cat('\n')
-  cat(paste0(nrow(x$validation),"-fold cross validation", ""), "\n")
+  cat(paste0(nrow(object$validation),"-fold cross validation", ""), "\n")
   cat('\n')
-  x$validation
 }
 
-#' Title
+#' Plot gradient CV
 #'
-#' @param x object
-#' @param ... othjers
+#' @param ... further arguments passed to or from other methods
+#' @param x object of gradient_cv class
 #'
-#' @return a
+#' @return graphics in ggplot
 #' @export
 plot.gradient_cv <- function(x, ...){
 

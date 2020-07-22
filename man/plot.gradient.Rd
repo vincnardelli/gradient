@@ -2,17 +2,18 @@
 % Please edit documentation in R/gradient_methods.R
 \name{plot.gradient}
 \alias{plot.gradient}
-\title{Plot descent convergence}
+\title{Plot gradient convergence}
 \usage{
 \method{plot}{gradient}(x, ...)
 }
 \arguments{
-\item{x}{object of descent class}
+\item{x}{object of gradient class}
 
 \item{...}{further arguments passed to or from other methods}
 }
 \value{
+graphics in ggplot
 }
 \description{
-Plot descent convergence
+Plot gradient convergence
 }
