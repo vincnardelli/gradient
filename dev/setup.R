@@ -21,3 +21,9 @@ usethis::use_testthat()
 usethis::use_test("gd")
 
 
+usethis::use_git_config(
+  scope = "user",
+  user.name = "Vincenzo Nardelli",
+  user.email = "vincnardelli@gmail.com"
+)
+usethis::use_git()
