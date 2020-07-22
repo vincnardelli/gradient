@@ -8,11 +8,14 @@
 }
 \arguments{
 \item{object}{object}
+\method{plot}{gradient}(x, ...)
+}
+\arguments{
+\item{x}{obj}
 
 \item{...}{others}
 }
-\value{
-
+\value{a
 }
 \description{
 Title

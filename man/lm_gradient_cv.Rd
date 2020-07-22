@@ -32,6 +32,8 @@ lm_gradient_cv(
 \item{stepsize}{step size}
 
 \item{fun}{fun}
+
+\item{parallel}{parallel}
 }
 \value{
 something

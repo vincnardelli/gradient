@@ -9,10 +9,19 @@
 \arguments{
 \item{object}{object}
 
+<<<<<<< HEAD
 \item{...}{others}
 }
 \value{
 
+=======
+\item{newdata}{new data}
+
+\item{...}{others}
+}
+\value{
+a
+>>>>>>> ae40a4bb2e6266cc29f7955e4dc8adda667bf855
 }
 \description{
 Title

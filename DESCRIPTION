@@ -24,7 +24,9 @@ Imports:
     Rcpp,
     RcppArmadillo,
     foreach,
-    doParallel
+    doParallel,
+    ggplot2,
+    tidyr
 LinkingTo: 
     Rcpp,
     RcppArmadillo

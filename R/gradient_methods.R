@@ -3,7 +3,7 @@
 #' @param x object
 #' @param ... othjers
 #'
-#' @return
+#' @return a
 #' @export
 
 print.gradient <- function(x, ...) {
@@ -18,7 +18,7 @@ print.gradient <- function(x, ...) {
 #' @param object oggetto
 #' @param ... others
 #'
-#' @return
+#' @return a
 #' @export
 
 summary.gradient <- function(object, ...){
@@ -48,7 +48,7 @@ summary.gradient <- function(object, ...){
 #' @param object object
 #' @param ... others
 #'
-#' @return
+#' @return a
 #' @export
 coef.gradient <- function(object, ...){
   as.vector(object$b)
@@ -57,22 +57,23 @@ coef.gradient <- function(object, ...){
 
 #' Title
 #'
-#' @param object object
 #' @param ... others
+#' @param x obj
 #'
-#' @return
+#' @return a
 #' @export
-plot.gradient <- function(object, ...){
+plot.gradient <- function(x, ...){
 
-  dg <- as.data.frame(object$A)[1:object$i,]
+  i <- b <- value <- variable <- NULL # solve global variable note
+  dg <- as.data.frame(x$A)[1:x$i,]
   dg$i <- 1:nrow(dg)
   dg <- rbind(c(b, 0), dg)
 
   dg <- dg %>%
-    pivot_longer(cols=-i, names_to = "variable", values_to = "value")
+    tidyr::pivot_longer(cols=-i, names_to = "variable", values_to = "value")
 
-  gg <- ggplot(dg, aes(x = i, y = value)) +
-    geom_line(aes(color = variable, linetype = variable))
+  gg <- ggplot2::ggplot(dg, ggplot2::aes(x = i, y = value)) +
+    ggplot2::geom_line(ggplot2::aes(color = variable, linetype = variable))
 
   gg
 }
@@ -82,8 +83,9 @@ plot.gradient <- function(object, ...){
 #'
 #' @param object object
 #' @param ... others
+#' @param newdata new data
 #'
-#' @return
+#' @return a
 #' @export
 predict.gradient <- function(object, newdata, ...){
 

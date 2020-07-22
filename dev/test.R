@@ -65,3 +65,5 @@ bench::mark(
   check = FALSE
 )
 
+lm_gradient_looc(b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = FALSE)
+
