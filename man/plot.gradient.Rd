@@ -12,6 +12,7 @@
 \item{...}{further arguments passed to or from other methods}
 }
 \value{
+graphics in ggplot
 }
 \description{
 Plot descent convergence
