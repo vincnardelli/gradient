@@ -90,5 +90,7 @@ lm_gradient_cv <- function(n.folds, b, formula, data=NULL, maxit=1000,     # max
               validation = validation,
               call = formula,
               fun = fun)
+  class(out) <- "gradient_cv"
+
 return(out)
 }

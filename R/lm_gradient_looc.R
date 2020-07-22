@@ -44,6 +44,7 @@ lm_gradient_looc <- function(b, formula, data=NULL, maxit=1000,     # max iterat
                                    stepsize=stepsize,  # stepsize parameter
                                    fun = fun,
                                    parallel=parallel)
+  class(out) <- "gradient_cv"
 
   return(out)
 }

@@ -52,18 +52,24 @@ predict(gd, new)
 
 # Validate
 
-validate(sd, new, y1)
+validate(lm_gradient(b, y~x1+x2, data=data, maxit,
+                     tolerance, fun="sd"), new, y1)
 
 
-c <- lm_gradient_cv(10, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = TRUE)
-c
+cv <- lm_gradient_cv(10, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = TRUE)
+
+print(cv)
+
+summary(cv)
+
+plot(cv)
 
 
-bench::mark(
-  parallel=lm_gradient_cv(2500, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = TRUE),
-  sequential = lm_gradient_cv(2500, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = FALSE),
-  check = FALSE
-)
-
-lm_gradient_looc(b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = FALSE)
+# bench::mark(
+#   parallel=lm_gradient_cv(2500, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = TRUE),
+#   sequential = lm_gradient_cv(2500, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = FALSE),
+#   check = FALSE
+# )
+#
+# lm_gradient_looc(b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = FALSE)
 
