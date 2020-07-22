@@ -81,6 +81,21 @@ Both of the algorithm reach the convergence but the steepest descent is faster (
 head(sd$A)
 head(gd$A)
 ```
+Moreover, it is possible to predict new values using the method predict. 
+
+```{r, echo = F}
+n1 <- 200
+x11 <- rnorm(200)
+x21 <- rnorm(200)
+x31 <- rnorm(200)
+
+new <- data.frame(x1=x11, x2=x21, x3=x31)
+
+y1 = 1 + .5*x1 + .2*x2 + rnorm(n1)
+
+y_pred <- predict(sd, new)
+head(y_pred)
+```
 
 ## Rcpp & R
 

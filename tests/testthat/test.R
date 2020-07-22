@@ -126,7 +126,7 @@ test_that("gd class", {
                "gradient")
 })
 
-context("Methods")
+context("Methods gradient")
 a <- lm_gradient(b=b, formula=y~x1+x2, maxit=maxit, tolerance=tolerance, stepsize=stepsize, fun="gd")
 
 test_that("print", {
@@ -146,3 +146,35 @@ test_that("coef", {
                c(0.117811702875545, 0.107945369401251, 0.104008346008317)
   )
 })
+
+
+test_that("plot", {
+  expect_true("ggplot" %in% class(plot(a)))
+})
+
+test_that("predict", {
+    expect_equal(nrow(predict(a, data.frame(x1=1, x2=1))),
+                 1
+)
+})
+
+
+context("Methods gradient_cv")
+a <- lm_gradient_cv(5, b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="gd", parallel = FALSE)
+
+test_that("print", {
+  expect_equal(capture.output(print(a)),
+               c("", "5-fold cross validation ", "", "beta0 0.24249  beta1 0.16356  beta2 0.13207  "
+               ))
+})
+
+test_that("summary", {
+  expect_equal(capture.output(summary(a)),
+               c("", "5-fold cross validation ", ""))
+})
+
+test_that("plot", {
+  expect_true("gtable" %in% class(plot(a)))
+})
+
+

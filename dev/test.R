@@ -73,3 +73,5 @@ plot(cv)
 #
 # lm_gradient_looc(b=b, formula=y~x1+x2, data=data, maxit, tolerance, fun="sd", parallel = FALSE)
 
+lm_gradient(b, y~x1+x2, data=data, maxit,
+            tolerance, fun="sd", verbose=FALSE)
