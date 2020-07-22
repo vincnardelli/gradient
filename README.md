@@ -1,6 +1,6 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# gradient <img src="dev/img/hexlogo.png" align="right" width="120" />
+# gradient <img src="dev/img/hexlogo.png" align="right" width="200" />
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/vincnardelli/gradient.svg?branch=master)](https://travis-ci.com/vincnardelli/gradient)
