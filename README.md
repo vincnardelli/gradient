@@ -16,7 +16,7 @@
 ``` r
 # The easiest way to get gradient is to install it from GitHub:
 # install.packages("devtools")
-devtools::install_github("vincnardelli/gradient")w
+devtools::install_github("vincnardelli/gradient")
 ```
 
 
