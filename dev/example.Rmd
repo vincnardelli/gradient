@@ -193,7 +193,7 @@ linear_optim <- function(par,                    # beta(0)
 }
 ```
 
-```{r}
+```{r, warning=FALSE}
 bm <- bench::mark(gd_R = linear_optim(b, y~x1+x2, data, fun="gd"),
                   sd_R = linear_optim(b, y~x1+x2, data, fun="sd"),
                   gd_C = lm_gradient(b, y~x1+x2, data, fun="gd"),
@@ -237,7 +237,7 @@ and look at the results:
 ```{r cv4}
 print(gd_looc)
 # summary(gd_looc)
-plot(gd_looc)
+# plot(gd_looc)
 ```
 
 
