@@ -26,6 +26,7 @@ summary.gradient_cv <- function(object, ...){
   cat('\n')
   cat(paste0(nrow(object$validation),"-fold cross validation", ""), "\n")
   cat('\n')
+  object$validation
 }
 
 #' Plot gradient CV
